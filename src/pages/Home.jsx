@@ -15,59 +15,68 @@ export default function Home() {
         </div>
       </div>
 
-      <main>
+      <main id="home_main" className="py-4">
         <div className="container">
 
-          <div className="row row-cols-lg-8  row-cols-md-4 row-cols-sm-1 mb-4" >
+          <div className="card text-center my-2">
 
-
-            <div className="col">
-
-              <div className="card">
-                <img className="card-img-top" src="https://picsum.photos/seed/picsum/120/80" alt="Card image cap" />
-                <div className="card-body">
-                  <h4 className="card-title"> Title 1</h4>
-                  <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, architecto!</p>
+            <div className="card-header">
+              Featured
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Recent Posts</h5>
+              <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim laborum numquam voluptate asperiores officia consequuntur?</p>
+              <div className="row">
+                <div className="col-sm-6 mb-3 mb-sm-0">
+                  <div className="card">
+                    <div className="card-body">
+                      <h5 className="card-title">Special title treatment</h5>
+                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6">
+                  <div className="card">
+                    <div className="card-body">
+                      <h5 className="card-title">Special title treatment</h5>
+                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <a href="/posts" className="btn btn-primary mt-4">Go to Posts</a>
             </div>
-
-            <div className="col">
-
-              <div className="card">
-                <img className="card-img-top" src="https://picsum.photos/seed/picsum/120/80" alt="Card image cap" />
-                <div className="card-body">
-                  <h4 className="card-title">Title2</h4>
-                  <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, architecto!</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-
-              <div className="card">
-                <img className="card-img-top" src="https://picsum.photos/seed/picsum/120/80" alt="Card image cap" />
-                <div className="card-body">
-                  <h4 className="card-title">Title3</h4>
-                  <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, architecto!</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col">
-
-              <div className="card">
-                <img className="card-img-top" src="https://picsum.photos/seed/picsum/120/80" alt="Card image cap" />
-                <div className="card-body">
-                  <h4 className="card-title">Title4</h4>
-                  <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, architecto!</p>
-                </div>
-              </div>
-            </div>
-
-
           </div>
 
+          <div className="card text-center my-2 mt-3">
+
+            <div className="card-header">
+              Featured
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">Chi Siamo</h5>
+              <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim laborum numquam voluptate asperiores officia consequuntur?</p>
+              <div className="row">
+                <div className="col-sm-6 mb-3 mb-sm-0">
+                  <div className="card">
+                    <div className="card-body">
+                      <h5 className="card-title">Special title treatment</h5>
+                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6">
+                  <div className="card">
+                    <div className="card-body">
+                      <h5 className="card-title">Special title treatment</h5>
+                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="/about" className="btn btn-primary mt-4">Go to About</a>
+            </div>
+          </div>
         </div>
 
       </main>
