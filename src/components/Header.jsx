@@ -2,27 +2,45 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
 
+  const menu = [
+    {
+      id: 1,
+      path: "/",
+      text: 'Home'
+    },
+    {
+      id: 2,
+      path: "/about",
+      text: 'Chi Siamo'
+    },
+    {
+      id: 1,
+      path: "/posts",
+      text: 'Posts'
+    }
+
+  ]
+
+
   return (
-    <>
-      <header className="p-4">
+    <header>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3 mb-2">
+        <a className="navbar-brand" href="/">
+          React<b>Routing</b>
+        </a>
+        <div className="collapse navbar-collapse justify-content-end">
 
-        <nav className="d-flex justify-content-between" >
-          <div className="logo">
-            Router<b>React</b>
-          </div>
+          <ul className="navbar-nav">
+            {menu.map(item => (
+              <li key={item.id} className="nav-item">
+                <NavLink className="nav-link" to={item.path}>{item.text}</NavLink>
+              </li>
+            ))}
+          </ul>
 
+        </div>
+      </nav>
+    </header>
 
-          <div className="links_nav d-flex gap-3">
-            <NavLink className='nav-link' to="/">Home</NavLink>
-            <NavLink className='nav-link' to="/about">Chi Siamo</NavLink>
-            <NavLink className='nav-link' to="/posts">Posts</NavLink>
-
-          </div>
-        </nav>
-
-
-      </header>
-
-    </>
   )
 }

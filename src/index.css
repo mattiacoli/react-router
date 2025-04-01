@@ -11,17 +11,7 @@ body {
   font-family: 'Syne Variable', sans-serif;
 }
 
-header {
 
-  background-color: blueviolet;
-  color: white;
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-}
 
 main {
   min-height: 70vh;
