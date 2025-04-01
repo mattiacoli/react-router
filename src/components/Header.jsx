@@ -13,9 +13,9 @@ export default function Header() {
 
 
           <div className="links_nav d-flex gap-3">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">Chi Siamo</NavLink>
-            <NavLink to="/posts">Posts</NavLink>
+            <NavLink className='nav-link' to="/">Home</NavLink>
+            <NavLink className='nav-link' to="/about">Chi Siamo</NavLink>
+            <NavLink className='nav-link' to="/posts">Posts</NavLink>
 
           </div>
         </nav>

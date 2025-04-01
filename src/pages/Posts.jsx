@@ -28,19 +28,19 @@ export default function Posts() {
 
         <main>
           <div className="row">
-            <div className="col-auto">
-              {posts.map(post => (
-                <div class="card" key={post.id}>
+            {posts.map(post => (
+              <div key={post.id} className="col-md-4 mb-4">
+                <div class="card h-100">
                   <img class="card-img-top" src={`${apiUrl}${post.image}`} alt={post.title} />
                   <div class="card-body">
                     <h4 class="card-title">{post.title}</h4>
                     <p class="card-text">{post.content}</p>
                   </div>
                 </div>
-              ))}
+              </div>
+            ))}
 
 
-            </div>
           </div>
         </main>
 
