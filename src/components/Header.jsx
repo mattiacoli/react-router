@@ -14,7 +14,7 @@ export default function Header() {
       text: 'Chi Siamo'
     },
     {
-      id: 1,
+      id: 3,
       path: "/posts",
       text: 'Posts'
     }
