@@ -15,7 +15,7 @@ export default function Header() {
           <div className="links_nav">
             <ul className="nav gap-2">
               <li className="nav-item">
-                <NavLink to={'/'}>Home</NavLink>
+                <NavLink className='nav-item' to={'/'}>Home</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to={'/about'}>Chi Siamo</NavLink>
