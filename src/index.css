@@ -15,3 +15,12 @@ header {
   color: white;
 
 }
+
+main {
+  min-height: 70vh;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
