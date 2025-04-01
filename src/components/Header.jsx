@@ -4,26 +4,19 @@ export default function Header() {
 
   return (
     <>
-      <header>
+      <header className="p-4">
 
-        <nav className="navbar bg-primary p-4" data-bs-theme="dark">
+        <nav className="d-flex justify-content-between" >
           <div className="logo">
             Router<b>React</b>
           </div>
 
 
-          <div className="links_nav">
-            <ul className="nav gap-2">
-              <li className="nav-item">
-                <NavLink to={'/'}>Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to={'/about'}>Chi Siamo</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to={'/posts'}>Posts</NavLink>
-              </li>
-            </ul>
+          <div className="links_nav d-flex gap-3">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">Chi Siamo</NavLink>
+            <NavLink to="/posts">Posts</NavLink>
+
           </div>
         </nav>
 
