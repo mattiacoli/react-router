@@ -11,6 +11,10 @@ export default function PostDetail() {
 
   const { id } = useParams()
 
+  const nextId = parseInt(id) + 1
+  const prevId = parseInt(id) - 1
+
+
   useEffect(() => {
     fetch(`${apiUrl}/posts/${id}`)
       .then(res => res.json())
@@ -44,14 +48,17 @@ export default function PostDetail() {
             </button>
 
             <div className="pagination d-flex gap-2">
-              <button className="btn btn-outline-primary">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              <button className="btn btn-outline-primary"
+                onClick={() => navigate(`/posts/${prevId}`)}>
+
+                <i className="fa fa-chevron-left" aria-hidden="true"></i>
                 Prev
               </button>
 
-              <button className="btn btn-outline-primary">
+              <button className="btn btn-outline-primary"
+                onClick={() => navigate(`/posts/${nextId}`)}>
                 Next
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <i className="fa fa-chevron-right" aria-hidden="true"></i>
 
               </button>
 
@@ -73,8 +80,8 @@ export default function PostDetail() {
 
                 <h2 className="text-warning fw-bold mb-2">{post.title}</h2>
                 <div className="tags d-flex gap-3 my-4">
-                  {post.tags.map(tag => (
-                    <span class="badge text-bg-success p-2">{tag}</span>
+                  {post.tags.map((tag, i) => (
+                    <span key={i} className="badge text-bg-success p-2">{tag}</span>
                   ))
                   }
                 </div>
