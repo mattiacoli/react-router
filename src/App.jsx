@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Posts from "./pages/Posts"
 import PostDetail from "./pages/PostDetail"
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
             <Route path="/about" Component={About} />
             <Route path="/posts" Component={Posts} />
             <Route path="/posts/:id" Component={PostDetail} />
+            <Route path="/*" Component={NotFound} />
+
 
           </Route>
         </Routes>

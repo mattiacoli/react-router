@@ -20,7 +20,6 @@ export default function PostDetail() {
       .then(res => res.json())
       .then(data => {
         setPost(data)
-        console.log(data);
 
       })
   }, [id])
@@ -32,15 +31,15 @@ export default function PostDetail() {
 
     <main>
       {!post ? ('Loading') : (
+
         <>
-
-
+          {/* cover image */}
           <div style={{ minHeight: '40vh', backgroundImage: `url(${apiUrl}${post.image})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
 
           </div>
 
 
-
+          {/* navigation Buttons */}
           <div className="actions d-flex justify-content-between p-5">
 
             <button className="btn btn-primary" onClick={() => navigate('/posts')}>
@@ -63,15 +62,11 @@ export default function PostDetail() {
               </button>
 
             </div>
-
-
-
-
-
           </div>
 
 
 
+          {/* Post Detail */}
 
           <div className="details">
             <div className="mb-3">
@@ -79,6 +74,8 @@ export default function PostDetail() {
                 className="h-100 p-5 text-black bg-lighter">
 
                 <h2 className="text-warning fw-bold mb-2">{post.title}</h2>
+
+                {/* post tags */}
                 <div className="tags d-flex gap-3 my-4">
                   {post.tags.map((tag, i) => (
                     <span key={i} className="badge text-bg-success p-2">{tag}</span>
