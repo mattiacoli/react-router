@@ -49,23 +49,26 @@ export default function PostDetail() {
                 Go to Posts Index
               </button>
 
-              <div className="pagination d-flex gap-2">
-                <button className="btn btn-outline-dark"
-                  onClick={() => navigate(`/posts/${prevId}`)}>
 
-                  <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                  Prev
-                </button>
+              <div className="pagination d-flex gap-3">
 
-                <button className="btn btn-outline-dark"
-                  onClick={() => navigate(`/posts/${nextId}`)}>
-                  Next
-                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
-
-                </button>
-
+                {prevId > 0 && (
+                  <button className="btn btn-outline-primary"
+                    onClick={() => navigate(`/posts/${prevId}`)}>
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    Prev
+                  </button>
+                )}
+                {nextId <= 5 && (
+                  <button className="btn btn-outline-primary"
+                    onClick={() => navigate(`/posts/${nextId}`)}>
+                    Next
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                  </button>
+                )}
               </div>
             </div>
+
 
 
 
