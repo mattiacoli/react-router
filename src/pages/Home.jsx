@@ -1,4 +1,36 @@
+import { useEffect, useState } from 'react'
+
 export default function Home() {
+
+  const [posts, setPosts] = useState([])
+
+  const apiUrl = "http://localhost:3000/posts"
+
+
+  useEffect(() => {
+
+    fetch(`${apiUrl}`)
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data)
+        console.log(data);
+
+      })
+
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const activeItem = document.querySelector('#carousele .carousel-item.active');
+      const nextItem = activeItem?.nextElementSibling || document.querySelector('#carousele .carousel-item:first-child');
+
+      activeItem?.classList.remove('active');
+      nextItem?.classList.add('active');
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
 
@@ -16,67 +48,24 @@ export default function Home() {
       </div>
 
       <main id="home_main" className="py-4">
+
         <div className="container">
 
-          <div className="card text-center my-2">
+          <div id="carousele" className="carousel slide">
 
-            <div className="card-header">
-              <h5 className="card-title">Recent Posts</h5>
-            </div>
-            <div className="card-body">
-
-              <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim laborum numquam voluptate asperiores officia consequuntur?</p>
-              <div className="row">
-                <div className="col-sm-6 mb-3 mb-sm-0">
-                  <div className="card">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
+            <div className="carousel-inner p-3">
+              {posts.map((post, index) => (
+                <div key={post.id} className={`carousel-item ${index === 0 ? 'active' : ''} border rounded`}>
+                  <img src={`http://localhost:3000${post.image}`} className="d-block w-100" alt={post.title} />
+                  <div className="carousel-caption d-none d-md-block">
                   </div>
+                  <h4 className='text-white m-3'>{post.title}</h4>
                 </div>
-                <div className="col-sm-6">
-                  <div className="card">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a href="/posts" className="btn btn-primary mt-4">Go to Posts</a>
+              ))}
             </div>
           </div>
 
-          <div className="card text-center my-2 mt-3">
 
-            <div className="card-header">
-              Featured
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Chi Siamo</h5>
-              <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim laborum numquam voluptate asperiores officia consequuntur?</p>
-              <div className="row">
-                <div className="col-sm-6 mb-3 mb-sm-0">
-                  <div className="card">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="card">
-                    <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a href="/about" className="btn btn-primary mt-4">Go to About</a>
-            </div>
-          </div>
         </div>
 
 

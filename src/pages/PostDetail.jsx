@@ -76,7 +76,7 @@ export default function PostDetail() {
                 <div
                   className="h-100 p-5 text-black bg-lighter">
 
-                  <h2 className="text-warning fw-bold mb-2">{post.title}</h2>
+                  <h2 className="text-black fs-1 fw-bold mb-2">{post.title}</h2>
 
                   {/* post tags */}
                   <div className="tags d-flex gap-3 my-4">
