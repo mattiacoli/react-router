@@ -9,17 +9,60 @@
 
 body {
   font-family: 'Syne Variable', sans-serif;
-}
-
-#home_main {
   background-image: url(https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
-  min-height: 70vh;
+  min-height: 75vh;
 }
 
 footer {
   background-color: black;
   color: white;
+}
+
+
+#home_jumbo {
+  background-color: rgba(197, 204, 211, 0.568);
+  border: 2px lightblue;
+}
+
+#home_main {
+  .card {
+    background-color: rgba(197, 204, 211, 0.568);
+  }
+}
+
+#about_main {
+  color: white;
+}
+
+
+
+
+#posts_main {
+  .card {
+    background-color: rgba(197, 204, 211, 0.568);
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(122, 119, 119, 0.5);
+
+    &:hover {
+      scale: 1.1;
+      box-shadow: 0 0 20px 0 rgba(122, 119, 119, 0.5);
+      background-color: rgb(251, 253, 255);
+      color: rgb(0, 0, 0);
+      border: 2px lightblue;
+      border-radius: 10px;
+      cursor: pointer;
+      transform: translateY(-5px);
+      transition: all 0.2s ease-in-out;
+    }
+
+  }
+}
+
+#post_main {
+  background-color: rgba(230, 237, 245, 0.842);
 }

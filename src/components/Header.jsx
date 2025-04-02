@@ -26,7 +26,7 @@ export default function Header() {
     <header>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark p-3 mb-2">
         <a className="navbar-brand" href="/">
-          React<b>Routing</b>
+          Blog<b>Routing</b>
         </a>
         <div className="collapse navbar-collapse justify-content-end">
 

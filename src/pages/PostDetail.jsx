@@ -33,65 +33,75 @@ export default function PostDetail() {
       {!post ? ('Loading') : (
 
         <>
+
+
           {/* cover image */}
           <div style={{ minHeight: '40vh', backgroundImage: `url(${apiUrl}${post.image})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
 
           </div>
 
 
-          {/* navigation Buttons */}
-          <div className="actions d-flex justify-content-between p-5">
+          <main id="post_main">
 
-            <button className="btn btn-primary" onClick={() => navigate('/posts')}>
-              Go to Posts Index
-            </button>
+            <div className="actions d-flex justify-content-between p-5">
 
-            <div className="pagination d-flex gap-2">
-              <button className="btn btn-outline-primary"
-                onClick={() => navigate(`/posts/${prevId}`)}>
-
-                <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                Prev
+              <button className="btn btn-outline-primary" onClick={() => navigate('/posts')}>
+                Go to Posts Index
               </button>
 
-              <button className="btn btn-outline-primary"
-                onClick={() => navigate(`/posts/${nextId}`)}>
-                Next
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
+              <div className="pagination d-flex gap-2">
+                <button className="btn btn-outline-dark"
+                  onClick={() => navigate(`/posts/${prevId}`)}>
 
-              </button>
+                  <i className="fa fa-chevron-left" aria-hidden="true"></i>
+                  Prev
+                </button>
 
-            </div>
-          </div>
+                <button className="btn btn-outline-dark"
+                  onClick={() => navigate(`/posts/${nextId}`)}>
+                  Next
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
 
+                </button>
 
-
-          {/* Post Detail */}
-
-          <div className="details">
-            <div className="mb-3">
-              <div
-                className="h-100 p-5 text-black bg-lighter">
-
-                <h2 className="text-warning fw-bold mb-2">{post.title}</h2>
-
-                {/* post tags */}
-                <div className="tags d-flex gap-3 my-4">
-                  {post.tags.map((tag, i) => (
-                    <span key={i} className="badge text-bg-success p-2">{tag}</span>
-                  ))
-                  }
-                </div>
-                <p>
-                  {post.content}
-                </p>
               </div>
             </div>
-          </div>
+
+
+
+            {/* Post Detail */}
+
+            <div className="details">
+              <div className="mb-3">
+                <div
+                  className="h-100 p-5 text-black bg-lighter">
+
+                  <h2 className="text-warning fw-bold mb-2">{post.title}</h2>
+
+                  {/* post tags */}
+                  <div className="tags d-flex gap-3 my-4">
+                    {post.tags.map((tag, i) => (
+                      <span key={i} className="badge text-bg-success p-2">{tag}</span>
+                    ))
+                    }
+                  </div>
+                  <p>
+                    {post.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+          </main>
+
+
+          {/* navigation Buttons */}
 
         </>
 
-      )}
+      )
+      }
     </main >
   )
 

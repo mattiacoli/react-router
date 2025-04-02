@@ -24,19 +24,18 @@ export default function Posts() {
 
       <div className="container mt-4">
 
-        <h1>Posts</h1>
+        <h1 className="text-white">Posts</h1>
 
-        <main>
+        <main id="posts_main">
           <div className="row">
             {posts.map(post => (
               <div key={post.id} className="col-md-4 mb-4">
-                <div className="card h-100">
+                <div className="card h-100 d-flex" style={{ minHeight: '350px' }}>
                   <img className="card-img-top" src={`${apiUrl}${post.image}`} alt={post.title} />
-                  <div className="card-body">
-                    <h4 className="card-title">{post.title}</h4>
+                  <div className="card-body d-flex flex-column justify-content-between">
+                    <h4 className="card-title mb-4 ">{post.title}</h4>
 
-                    <Link to={`/posts/${post.id}`} className="btn btn-primary">Post Detail</Link>
-
+                    <Link to={`/posts/${post.id}`} className="btn btn-outline-primary">Show Post</Link>
 
                   </div>
                 </div>

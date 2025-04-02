@@ -2,12 +2,12 @@ export default function Home() {
   return (
     <>
 
-      <div className="jumbotron">
+      <div id="home_jumbo" className="jumbotron border rounded mx-2">
         <div className="mb-3">
           <div
-            className="h-100 p-5 text-black bg-light">
+            className="h-100 p-5 text-black">
 
-            <h2>Welcome in our Blog</h2>
+            <h2>Welcome! </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repellendus omnis dolor consequuntur hic veniam enim, perferendis veritatis, sint libero quo, asperiores inventore quas maxime. Dicta quasi alias assumenda nostrum!
             </p>
@@ -21,10 +21,10 @@ export default function Home() {
           <div className="card text-center my-2">
 
             <div className="card-header">
-              Featured
+              <h5 className="card-title">Recent Posts</h5>
             </div>
             <div className="card-body">
-              <h5 className="card-title">Recent Posts</h5>
+
               <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim laborum numquam voluptate asperiores officia consequuntur?</p>
               <div className="row">
                 <div className="col-sm-6 mb-3 mb-sm-0">
@@ -78,6 +78,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
 
       </main>
 
