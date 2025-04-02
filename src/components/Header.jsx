@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3 mb-2">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark p-3 mb-2">
         <a className="navbar-brand" href="/">
           React<b>Routing</b>
         </a>

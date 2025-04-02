@@ -13,6 +13,8 @@ export default function Posts() {
       .then(res => res.json())
       .then(data => {
         setPosts(data)
+        console.log(data);
+
       })
 
   }, [])
