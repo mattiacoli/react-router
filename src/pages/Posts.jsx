@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Posts() {
   const [posts, setPosts] = useState([])
@@ -27,11 +28,14 @@ export default function Posts() {
           <div className="row">
             {posts.map(post => (
               <div key={post.id} className="col-md-4 mb-4">
-                <div class="card h-100">
-                  <img class="card-img-top" src={`${apiUrl}${post.image}`} alt={post.title} />
-                  <div class="card-body">
-                    <h4 class="card-title">{post.title}</h4>
-                    <p class="card-text">{post.content}</p>
+                <div className="card h-100">
+                  <img className="card-img-top" src={`${apiUrl}${post.image}`} alt={post.title} />
+                  <div className="card-body">
+                    <h4 className="card-title">{post.title}</h4>
+
+                    <Link to={`/posts/${post.id}`} className="btn btn-primary">Post Detail</Link>
+
+
                   </div>
                 </div>
               </div>
