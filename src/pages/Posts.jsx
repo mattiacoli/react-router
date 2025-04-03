@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
+import { useAlert } from "../contexts/AlertContext"
 import { Link } from "react-router-dom"
 
 export default function Posts() {
   const [posts, setPosts] = useState([])
 
   const apiUrl = "http://localhost:3000"
+
+  const { setAlert } = useAlert()
 
 
   useEffect(() => {
@@ -14,6 +17,14 @@ export default function Posts() {
       .then(data => {
         setPosts(data)
         console.log(data);
+
+      })
+      .catch(err => {
+
+        setAlert({
+          type: 'error',
+          message: err.message
+        })
 
       })
 
