@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { AlertProvider } from "./contexts/AlertContext"
+import { PostsProvider } from "./contexts/PostsContext"
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -15,20 +16,25 @@ function App() {
     <>
       <AlertProvider>
 
-        <BrowserRouter>
-          <Routes>
-            <Route Component={DefaultLayout}>
-              <Route path="/" Component={Home} />
-              <Route path="/about" Component={About} />
-              <Route path="/posts" Component={Posts} />
-              <Route path="/posts/:id" Component={PostDetail} />
-              <Route path="/*" Component={NotFound} />
+        <PostsProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route Component={DefaultLayout}>
+                <Route path="/" Component={Home} />
+                <Route path="/about" Component={About} />
+                <Route path="/posts" Component={Posts} />
+                <Route path="/posts/:id" Component={PostDetail} />
+                <Route path="/*" Component={NotFound} />
 
 
-            </Route>
-          </Routes>
+              </Route>
+            </Routes>
 
-        </BrowserRouter>
+          </BrowserRouter>
+
+        </PostsProvider>
+
+
       </AlertProvider>
 
 

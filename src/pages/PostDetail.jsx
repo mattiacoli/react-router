@@ -63,7 +63,7 @@ export default function PostDetail() {
                   <button className="btn btn-outline-primary"
                     onClick={() => navigate(`/posts/${nextId}`)}>
                     Next
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
                   </button>
                 )}
               </div>

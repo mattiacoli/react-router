@@ -1,34 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useAlert } from '../contexts/AlertContext'
+import { usePostsContext } from '../contexts/PostsContext';
 
 export default function Home() {
 
-  const [posts, setPosts] = useState([])
-
-  const apiUrl = "http://localhost:3000/posts"
-
-  const { setAlert } = useAlert()
+  const { posts } = usePostsContext()
 
 
-  useEffect(() => {
-
-    fetch(`${apiUrl}`)
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data)
-        console.log(data);
-
-      })
-      .catch(err => {
-
-        setAlert({
-          type: 'error',
-          message: err.message
-        })
-
-      })
-
-  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
